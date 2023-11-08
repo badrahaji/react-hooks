@@ -19,8 +19,8 @@ let  [movies,setMovies] = useState([
     imgUrl:'https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Commando_%282013_film%29.jpg/220px-Commando_%282013_film%29.jpg'},
 ])
 
- const handleDelete = (index) =>{
- movies = movies.filter((ele)=>ele.index!==index)
+ const handleDelete = () =>{
+ movies = movies.filter((ele)=>ele.index!==titleFiltre)
  }
 const [titleFiltre, setTitleFiltre] = useState("");
   const [rateFiltre, setRateFiltre] = useState(0);
@@ -47,15 +47,12 @@ const handleAddMovie = (newMovie)=>{
       <NavBar/>
       <div className="filter">
       <h1> welcome to My Movie Store </h1> 
-
-      <AddMovie handleAddMovie={handleAddMovie}/>
-      <Filter  handleTitleChange={handleTitleChange} handleRateChange={handleRateChange} />
       </div>
-     
-  <Routes>
-  <Route path="/" element={<App />} />
-  <Route path="/movieslist" element={ <MovieList movies={moviesFiltres} handleDelete={handleDelete} />} />
-  </Routes>
+      <Filter  handleTitleChange={handleTitleChange} handleRateChange={handleRateChange} />
+      <AddMovie handleAddMovie={handleAddMovie}/>
+
+      <MovieList movies={moviesFiltres} handleDelete={handleDelete} />
+
          </div>
   );
  }

@@ -5,19 +5,13 @@ import './style.css'
  const NavBar = ()=>{
     return(
         <div className='navbar'>
-           <navbar>
+         
              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="series"></Link>Series</li>   
-                <li><Link to="anime"></Link> Anime </li>   
+                <li>Home</li>
+                <li>Series</li>   
+                <li> Anime </li>   
             </ul>
-            </navbar>
-            <Routes>
-                <Route path='/' element={<Home/>}></Route>
-                <Route path='/series' element={<Series/>}></Route>
-                <Route path='/anime' element={<Anime/>}></Route>
-
-            </Routes>
+    
         </div>
     )
 }
